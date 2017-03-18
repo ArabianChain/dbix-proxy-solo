@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EtherProxy</title>
+    <title>DbixProxySolo</title>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -15,10 +15,10 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <a class="hidden-sm hidden-xs" href="https://github.com/sammy007/ether-proxy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+    
     <script id="stats-template" type="text/x-handlebars-template">
       <div class="row marketing">
-        <div class="col-xs-6">
+        <div class="col-xs-6" style="margin-top: -15px;">
           <dl class="dl-horizontal">
             <dt>Hashrate</dt>
             <dd><span class="badge alert-info">{{formatNumber hashrate}}</span></dd>
@@ -30,7 +30,7 @@
             <dd><span class="badge alert-success">{{totalOnline}}</span></dd>
           </dl>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-6" style="margin-top: -15px;">
           <dl class="dl-horizontal">
             <dt>Accepted</dt>
             <dd><span class="badge alert-success">{{formatNumber current.accepts}}</span></dd>
@@ -44,31 +44,51 @@
             {{/if}}
           </dl>
         </div>
+        </div>
+        <div class="row" style="margin-top: -40px;">
         <div class="col-xs-12">
-          <p>
+        <div class="boxi1">
             <strong>Block height:</strong> <span class="label label-primary">{{height}}</span>
+            
+            </div>
+        </div></div>
+        <div class="row">
+             <div class="col-xs-4">
+          <div class="boxi">
             {{#if diff}}
-            <strong>Difficulty:</strong> <span class="label label-primary">{{formatNumber diff}}</span>
-            {{/if}}
-            <strong>Next Epoch:</strong> <span class="label label-primary">{{formatRelative nextEpoch now=now units="hour"}}</span>
-            <strong>Mode:</strong>
+            <strong>Difficulty:&nbsp;&nbsp;&nbsp;&nbsp;</strong> <span class="label label-primary">{{formatNumber diff}}</span>
+            {{/if}} </div></div>
+            <div class="col-xs-4">
+          <div class="boxi">
+            <strong>Next Epoch:&nbsp;&nbsp;&nbsp;&nbsp;</strong> <span class="label label-primary">{{formatRelative nextEpoch now=now units="hour"}}</span></div></div>
+            <div class="col-xs-4">
+          <div class="boxi">
+            <strong>Mode:&nbsp;&nbsp;&nbsp;&nbsp;</strong>
             {{#if current.pool}}
             <span class="label label-success">POOL</span>
             {{else}}
             <span class="label label-primary">SOLO</span>
             {{/if}}
-          </p>
+          </div></div>
         </div>
-        <div class="col-xs-12">
-          <p>
-            <strong>Blocks {{luck.window}}:</strong> <span class="label label-primary">{{formatNumber luck.blocksCount}}</span>
-            <strong>Shares/Diff {{luck.window}}:</strong>
-            <span class="label label-primary">{{formatNumber luck.variance style="percent" minimumFractionDigits=2 maximumFractionDigits=2}}</span>
-            <strong>Blocks {{luck.largeWindow}}:</strong> <span class="label label-primary">{{formatNumber luck.totalBlocksCount}}</span>
-            <strong>Shares/Diff {{luck.largeWindow}}:</strong>
+        <div class="row">
+        <div class="col-xs-3">
+          <div class="boxi">
+            <strong>Blocks {{luck.window}}:&nbsp;&nbsp;&nbsp;</strong> <span class="label label-primary">{{formatNumber luck.blocksCount}}</span></div></div>
+          <div class="col-xs-3">
+          <div class="boxi">
+            <strong>Shares/Diff {{luck.window}}:&nbsp;&nbsp;&nbsp;</strong>
+            <span class="label label-primary">{{formatNumber luck.variance style="percent" minimumFractionDigits=2 maximumFractionDigits=2}}</span></div></div>
+          <div class="col-xs-3">
+          <div class="boxi">
+            <strong>Blocks {{luck.largeWindow}}:&nbsp;&nbsp;&nbsp;</strong> <span class="label label-primary">{{formatNumber luck.totalBlocksCount}}</span></div></div>
+          <div class="col-xs-3">
+          <div class="boxi">
+            <strong>Shares/Diff {{luck.largeWindow}}:&nbsp;&nbsp;&nbsp;</strong>
             <span class="label label-primary">{{formatNumber luck.totalVariance style="percent" minimumFractionDigits=2 maximumFractionDigits=2}}</span>
-          </p>
-          <p class="hidden-sm hidden-xs"><strong>Run:</strong> <code>ethminer -F {{url}}</code></p>
+          </div></div>
+          </div>
+          <h4 class="hidden-sm hidden-xs"><strong>Run:</strong> <code>ethminer -F {{url}}</code></h4>
         </div>
         <div class="col-xs-12">
           <h4>Upstream</h4>
@@ -84,7 +104,7 @@
               {{#if sick}}
               <tr class="danger">
               {{else}}
-              <tr class="success">
+              <tr class="boxi2">
               {{/if}}
               {{#if current}}
               <td><strong>{{name}}</strong></td>
@@ -138,12 +158,12 @@
             </table>
           </div>
         </div>
-      </div>
+      
     </script>
 
     <div class="container">
-      <div class="header clearfix">
-        <h3 class="text-muted">EtherProxy</h3>
+      <div class="header clearfix" style="background-color: #e6e4e4; border: 3px solid #396688;">
+        <h1 style="font-size: 38px; color: #396688; text-align: center; font-weight: bold;">DBIX PROXY SOLO</h3>
       </div>
       <div id="alert" class="alert alert-danger hide" role="alert">
         <strong>An error occured while polling proxy state.</strong>
@@ -154,11 +174,16 @@
     </div>
     <footer class="footer">
       <div class="container">
-        <p>
-          By <a href="https://eurohash.net" target="_blank" class="logo"><span class="logo-1">Ξuro</span><span class="logo-2">Hash</span><span class="logo-3">.net</span></a> Ethereum Mining Pool.
-          <span class="text-nowrap text-center">ETH: 0xb85150eb365e7df0941f0cf08235f987ba91506a</span>
-        </p>
+        <br />
+            © DUBAICOIN DBIX PROXY SOLO 2017  <a href="#"></a><br />
+            <a href="https://www.dubaicoin.org/">DUBAICOIN.ORG</a> | 
+            <a href="https://thuraya.arabianchain.org"> SMART PLATFORM</a> |
+            <a href="https://www.arabianchain.org/">ARABIANCHAIN.ORG</a> | 
+             
+            <a href="https://github.com/ArabianChain">GITHUB</a>
+            <br />
       </div>
     </footer>
   </body>
 </html>
+
