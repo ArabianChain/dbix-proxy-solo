@@ -1,6 +1,6 @@
-# ether-proxy
+# dbix-proxy-solo
 
-Ethereum mining proxy with web-interface.
+Dubaicoin-DBIX mining proxy with web-interface.
 
 **Proxy feature list:**
 
