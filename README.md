@@ -16,7 +16,7 @@ Dubaicoin-DBIX mining proxy with web-interface.
 Dependencies:
 
   * go >= 1.4
-  * geth
+  * gdbix
 
 Export GOPATH:
 
@@ -32,14 +32,14 @@ Install required packages:
 
 Compile:
 
-    go build -o ether-proxy main.go
+    go build -o dbix-proxy main.go
 
 ### Building on Windows
 
 Follow [this wiki paragraph](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows#building-from-source) in order to prepare your environment.
 Install required packages (look at Linux install guide above). Then compile:
 
-    go build -o ether-proxy.exe main.go
+    go build -o dbix-proxy.exe main.go
 
 ### Building on Mac OS X
 
@@ -59,37 +59,31 @@ Configuration is self-describing, just copy *config.example.json* to *config.jso
 "upstream": [
   {
     "pool": true,
-    "name": "EuroHash.net",
-    "url": "http://eth-eu.eurohash.net:8888/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
+    "name": "Dubaicoin.org",
+    "url": "http://pool1.arabianchain.org:7777/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
     "timeout": "10s"
   },
   {
-    "name": "backup-geth",
-    "url": "http://127.0.0.1:8545",
+    "name": "backup-gdbix",
+    "url": "http://127.0.0.1:7565",
     "timeout": "10s"
   }
 ],
 ```
 
-In this example we specified [EuroHash.net](https://eurohash.net) mining pool as main mining target and a local geth node as backup for solo.
+In this example we specified [Dubaicoin.org](https://pool.dubaicoin.org) mining pool as main mining target and a local geth node as backup for solo.
 
 With <code>"submitHashrate": true|false</code> proxy will forward <code>eth_submitHashrate</code> requests to upstream.
 
 #### Running
 
-    ./ether-proxy config.json
+    ./dbix-proxy config.json
 
 #### Mining
 
-    ethminer -F http://x.x.x.x:8546/miner/5/gpu-rig -G
-    ethminer -F http://x.x.x.x:8546/miner/0.1/cpu-rig -C
+    ethminer -F http://x.x.x.x:7555/miner/5/gpu-rig -G
+    ethminer -F http://x.x.x.x:7555/miner/0.1/cpu-rig -C
 
-### Pools that work with this proxy
-
-* [EuroHash.net](https://eurohash.net) EU Ethereum mining pool
-* [SuprNova.cc](https://eth.suprnova.cc) SuprNova ETH Pool
-
-Pool owners, apply for listing here. PM me for implementation details.
 
 ### TODO
 
@@ -100,13 +94,6 @@ Pool owners, apply for listing here. PM me for implementation details.
 * Maybe add more stats
 * Maybe add charts
 
-### Donations
-
-* **ETH**: [0xb85150eb365e7df0941f0cf08235f987ba91506a](https://etherchain.org/account/0xb85150eb365e7df0941f0cf08235f987ba91506a)
-
-* **BTC**: [1PYqZATFuYAKS65dbzrGhkrvoN9au7WBj8](https://blockchain.info/address/1PYqZATFuYAKS65dbzrGhkrvoN9au7WBj8)
-
-Thanks to a couple of dudes who donated some Ether to me, I believe, you can do the same.
 
 ### License
 
