@@ -1,6 +1,6 @@
 # dbix-proxy-solo
 
-Dubaicoin-DBIX mining proxy with web-interface.
+Dubaicoin-DBIX mining proxy with web-interface 127.0.0.1:7070.
 
 **Proxy feature list:**
 
