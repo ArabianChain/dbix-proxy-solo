@@ -2,7 +2,7 @@
 	"threads": 2,
 
 	"proxy": {
-		"listen": "0.0.0.0:8546",
+		"listen": "0.0.0.0:7555",
 		"clientTimeout": "3m",
 		"blockRefreshInterval": "100ms",
 		"hashrateWindow": "15m",
@@ -12,7 +12,7 @@
 	},
 
 	"frontend": {
-		"listen": "0.0.0.0:8080",
+		"listen": "0.0.0.0:7070",
 		"login": "admin",
 		"password": ""
 	},
@@ -21,20 +21,16 @@
 	"upstream": [
 		{
 			"pool": true,
-			"name": "EuroHash.net",
-			"url": "http://eth-eu.eurohash.net:8888/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
+			"name": "pool1.arabianchain.org",
+			"url": "http://pool1.arabianchain.org:7777/YOUR_DBIX_ADDRESS/proxy",
 			"timeout": "10s"
 		},
 		{
 			"name": "main",
-			"url": "http://127.0.0.1:8545",
-			"timeout": "10s"
-		},
-		{
-			"name": "backup",
-			"url": "http://127.0.0.2:8545",
+			"url": "http://127.0.0.1:7565",
 			"timeout": "10s"
 		}
+		
 	],
 
 	"newrelicEnabled": false,
