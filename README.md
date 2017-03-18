@@ -75,6 +75,10 @@ In this example we specified [Dubaicoin.org](https://pool.dubaicoin.org) mining 
 
 With <code>"submitHashrate": true|false</code> proxy will forward <code>eth_submitHashrate</code> requests to upstream.
 
+#### Starting GDBIX
+
+bin/gdbix --rpc --rpcport 7565 --rpcaddr X.X.X.X (your_local_address)
+
 #### Running
 
     ./dbix-proxy config.json
