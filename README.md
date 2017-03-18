@@ -9,7 +9,7 @@ Ethereum mining proxy with web-interface.
 * Easy detection of sick rigs
 * Daemon failover list
 
-![Demo](https://raw.githubusercontent.com/sammy007/ether-proxy/master/proxy.png)
+![Demo](https://raw.githubusercontent.com/sanja18/dbix-proxy-solo/master/proxy.png)
 
 ### Building on Linux
 
