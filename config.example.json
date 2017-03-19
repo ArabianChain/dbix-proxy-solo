@@ -22,7 +22,7 @@
 		{
 			"pool": true,
 			"name": "pool1.arabianchain.org",
-			"url": "http://pool1.arabianchain.org:7777/YOUR_DBIX_ADDRESS/proxy",
+			"url": "http://eu2.pool.dubaicoin.org:7777/YOUR_DBIX_ADDRESS/proxy",
 			"timeout": "10s"
 		},
 		{
