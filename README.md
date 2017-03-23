@@ -1,6 +1,6 @@
 # dbix-proxy-solo
 
-Dubaicoin-DBIX mining proxy with web-interface 127.0.0.1:7070.
+Dubaicoin-DBIX mining proxy with web-interface 127.0.0.1:5599.
 
 **Proxy feature list:**
 
@@ -60,7 +60,7 @@ Configuration is self-describing, just copy *config.example.json* to *config.jso
   {
     "pool": true,
     "name": "Dubaicoin.org",
-    "url": "http://pool1.arabianchain.org:7777/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
+    "url": "http://eu2.dbixpool.org:5544/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
     "timeout": "10s"
   },
   {
