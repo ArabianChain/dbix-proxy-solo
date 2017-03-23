@@ -12,7 +12,7 @@
 	},
 
 	"frontend": {
-		"listen": "0.0.0.0:7070",
+		"listen": "0.0.0.0:5599",
 		"login": "admin",
 		"password": ""
 	},
@@ -22,7 +22,7 @@
 		{
 			"pool": true,
 			"name": "pool1.arabianchain.org",
-			"url": "http://eu2.pool.dubaicoin.org:7777/YOUR_DBIX_ADDRESS/proxy",
+			"url": "http://eu2.dbixpool.org:5544/YOUR_DBIX_ADDRESS/proxy",
 			"timeout": "10s"
 		},
 		{
@@ -34,7 +34,7 @@
 	],
 
 	"newrelicEnabled": false,
-	"newrelicName": "MyEtherProxy",
+	"newrelicName": "MyDbixProxy",
 	"newrelicKey": "SECRET_KEY",
 	"newrelicVerbose": false
 }
