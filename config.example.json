@@ -21,7 +21,7 @@
 	"upstream": [
 		{
 			"pool": true,
-			"name": "pool1.arabianchain.org",
+			"name": "Dubaicoin.org",
 			"url": "http://eu2.dbixpool.org:5544/YOUR_DBIX_ADDRESS/proxy",
 			"timeout": "10s"
 		},
